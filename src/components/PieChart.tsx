@@ -1,27 +1,19 @@
-import React from "react";
 import { Chart } from "react-google-charts";
 
-export const data = [
-  ["Task", "Hours per Day"],
-  ["Work", 11],
-  ["Eat", 2],
-  ["Commute", 2],
-  ["Watch TV", 2],
-  ["Sleep", 7],
-];
-
-export const options = {
-  title: "My Daily Activities",
+type Props = {
+  dados: any;
 };
-type Props = {};
 
-const PieChart = (props: Props) => {
+export const PieChart = ({ dados }: Props) => {
+  const data = [["Task", "Hours per Day"], ...dados];
   return (
     <div>
       <Chart
         chartType="PieChart"
         data={data}
-        options={options}
+        options={{
+          title: "My Daily Activities",
+        }}
         width={"100%"}
         height={"400px"}
       />

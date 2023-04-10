@@ -1,9 +1,10 @@
 import { Chart } from "react-google-charts";
-import data from "../../paises_ordenados.json"
 
-type Props = {};
+type Props = {
+  data: any;
+};
 
-const MapChart = (props: Props) => {
+const MapChart = ({ data }: Props) => {
   return (
     <div>
       <Chart
