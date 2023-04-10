@@ -2,14 +2,14 @@ import csv
 
 data = []
 header = ['Mês', 'País Importado',
-          'Produto', 'UF Importadora', 'Via', 'FOB (US$)']
+          'Produto', 'Via', 'FOB (US$)']
 
 with open('dados_sem_formatacao.csv', 'r', encoding='utf-8') as file:
     reader = csv.reader(file)
     for row in reader:
         new_row = row[0].split("+")
         if (new_row[4] == 'Santa Catarina'):
-            data.append(new_row[1:])
+            data.append(new_row[1:4]+new_row[5:])
 
 data.insert(0, header)
 

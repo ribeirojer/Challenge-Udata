@@ -1,4 +1,3 @@
-import { useState } from "react";
 import First from "./components/First";
 import Second from "./components/Second";
 import Third from "./components/Third";
@@ -7,24 +6,23 @@ import MapChart from "./components/MapChart";
 import DiffChart from "./components/DiffChart";
 import "./App.css";
 import data from "../saida.json";
+import os_20_paises from "../os_20_paises.json";
+import os_20_produtos from "../os_20_produtos.json";
 
 interface IDados {
-  Ano: string;
   Mês: string;
   "País Importado": string;
   Produto: string;
-  "UF Importadora": string;
   Via: string;
   "FOB (US$)": string;
 }
 
 function App() {
-  const dados:IDados = data
-  const [count, setCount] = useState(dados);
 
   return (
     <div className="App">
-      <First></First>
+      <First namedata="País" title="os_20_paises" dados={os_20_paises}></First>
+      <First namedata="País" title="os_20_produtos" dados={os_20_produtos}></First>
       <Second></Second>
       <Third></Third>
       <PieChart></PieChart>
