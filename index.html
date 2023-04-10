@@ -4,40 +4,9 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Pyscript imports -->
-    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
-
     <title>Estudo de caso - UData</title>
   </head>
   <body>
-    <py-config> packages = ["matplotlib", "pandas"] </py-config>
-
-    <!-- Click this button to log 'Apple', 'Banana', 'Candy', 'Donut' by sorting in Python-->
-    <button onclick="sortInPython(['Candy', 'Donut', 'Apple', 'Banana'])">
-      Sort In Python And Log
-    </button>
-    <script>
-      function sortInPython(data) {
-        js_sorted = pyscript.interpreter.globals.get("sorted"); //grab python's 'sorted' function
-        const sorted_data = js_sorted(data); //apply the function to the 'data' argument
-        for (const item of sorted_data) {
-          console.log(item);
-        }
-      }
-
-      function showX() {
-        console.log(
-          `In Python right now, x = ${pyscript.interpreter.globals.get("x")}`
-        );
-      }
-    </script>
-
-    <py-script>x = 42</py-script>
-
-    <button onclick="showX()">Click Me to Get 'x' from Python</button>
-
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

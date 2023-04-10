@@ -6,10 +6,21 @@ import PieChart from "./components/PieChart";
 import MapChart from "./components/MapChart";
 import DiffChart from "./components/DiffChart";
 import "./App.css";
-import data from "./assets/data.json"
+import data from "../saida.json";
+
+interface IDados {
+  Ano: string;
+  Mês: string;
+  "País Importado": string;
+  Produto: string;
+  "UF Importadora": string;
+  Via: string;
+  "FOB (US$)": string;
+}
 
 function App() {
-  const [count, setCount] = useState(data);
+  const dados:IDados = data
+  const [count, setCount] = useState(dados);
 
   return (
     <div className="App">
