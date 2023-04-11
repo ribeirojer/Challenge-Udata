@@ -137,7 +137,8 @@ with open("dados_formatados.csv", 'r', encoding='utf-8') as file:
 data.pop(0)
 
 for row in data:
-    pais = rename_country(row[2])
+    #pais = row[3]
+    pais = rename_country(row[2]).capitalize()
     valor = float(row[4])
     if pais in importacoes_por_pais:
         importacoes_por_pais[pais] += valor
@@ -147,5 +148,6 @@ for row in data:
 paises_ordenados = sorted(importacoes_por_pais.items(),
                           key=lambda x: x[1], reverse=True)
 
+#with open("os_20_paises.json", "w", encoding="utf-8") as f:
 with open("os_20_produtos.json", "w", encoding="utf-8") as f:
     json.dump(paises_ordenados[0:20], f, ensure_ascii=False)

@@ -2,17 +2,18 @@ import { Chart } from "react-google-charts";
 
 type Props = {
   dados: any;
+  title: string;
 };
 
-export const PieChart = ({ dados }: Props) => {
-  const data = [["Task", "Hours per Day"], ...dados];
+export const PieChart = ({ dados, title }: Props) => {
+  const data = [["Produto", "FOB (US$)"], ...dados];
   return (
     <div>
       <Chart
         chartType="PieChart"
         data={data}
         options={{
-          title: "My Daily Activities",
+          title,
         }}
         width={"100%"}
         height={"400px"}

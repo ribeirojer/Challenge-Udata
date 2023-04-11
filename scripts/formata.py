@@ -15,5 +15,4 @@ data.insert(0, header)
 
 with open('dados_formatados.csv', 'w', newline='', encoding='utf-8') as file:
     writer = csv.writer(file)
-    # Escrever os dados no arquivo CSV
     writer.writerows(data)

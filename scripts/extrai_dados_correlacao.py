@@ -14,7 +14,7 @@ with open("dados_formatados.csv", 'r', encoding='utf-8') as file:
     reader = csv.DictReader(file)
     produtos = {}
     for row in reader:
-        produto = row['Via']
+        produto = row['Produto']
         fob = int(row['FOB (US$)'])
         if produto in produtos:
             produtos[produto]['quantidade'] += 1
@@ -38,6 +38,6 @@ print("FOBs:", fobs)
 print("Quantidades:", len(quantidades))
 print("FOBs:", len(fobs))
 
-print(correlation(quantidades[0:5], fobs[0:5]))
-with open("correlacao_vias.json", "w", encoding="utf-8") as f:
+print(correlation(quantidades, fobs))
+with open("correlacao.json", "w", encoding="utf-8") as f:
     json.dump(produtos_array, f, ensure_ascii=False)
