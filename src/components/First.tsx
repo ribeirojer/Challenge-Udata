@@ -12,6 +12,7 @@ const First = ({ title, namedata, dados }: Props) => {
     chart: {
       title: title,
     },
+    colors: ['#72148C', '#B86AD9', '#692CBF', '#8C5642', '#F2F2F2']
   };
   return (
     <div>

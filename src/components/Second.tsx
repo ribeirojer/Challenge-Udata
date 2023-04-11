@@ -11,6 +11,8 @@ export const Second = ({ dados }: Props) => {
     hAxis: { title: "Mês" },
     seriesType: "bars",
     series: { 6: { type: "line" } },
+    colors: ['#72148C', '#B86AD9', '#692CBF','#72148C', '#B86AD9', '#692CBF', '#8C5642', '#F2F2F2']
+
   };
   return (
     <div>

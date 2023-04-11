@@ -24,7 +24,11 @@ const MapChart = ({ data }: Props) => {
         width="100%"
         height="400px"
         data={data}
+        options={{
+          colors: ["#B86AD9", "#72148C", "#72148C", "#8C5642"],
+        }}
       />
+      <h2>Mapa de importações</h2>
     </div>
   );
 };

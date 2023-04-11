@@ -45,8 +45,8 @@ maritima = [row[1] for row in result_sorted[1:]]
 rodoviaria = [row[2] for row in result_sorted[1:]]
 aerea = [row[3] for row in result_sorted[1:]]
 
-saida = [calculate_std_dev(maritima), calculate_std_dev(
-    rodoviaria), calculate_std_dev(aerea)]
+saida = [calculate_std_dev(maritima), calculate_std_dev(aerea), calculate_std_dev(
+    rodoviaria)]
 
 with open("desvio_vias.json", "w", encoding="utf-8") as f:
     json.dump(saida, f, ensure_ascii=False)

@@ -40,4 +40,4 @@ print("FOBs:", len(fobs))
 
 print(correlation(quantidades, fobs))
 with open("correlacao.json", "w", encoding="utf-8") as f:
-    json.dump(produtos_array, f, ensure_ascii=False)
+    json.dump([produtos_array, correlation(quantidades, fobs)], f, ensure_ascii=False)
